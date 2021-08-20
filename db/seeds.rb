@@ -1,4 +1,5 @@
 puts "Clearing old data..."
+Subscription.destroy_all
 Magazine.destroy_all
 Reader.destroy_all
 
@@ -27,7 +28,7 @@ puts "Seeding subscriptions..."
 
   # TODO: create subscriptions! Remember, a subscription belongs to a reader
   # and a subscription belongs to a magazine.
-  
+  Subscription.create(reader_id: reader_id, price: price, magazine_id: magazine_id)
 end
 
 puts "Done!"
